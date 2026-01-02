@@ -2,7 +2,6 @@ const users = []
 
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken")
-const JWT_SECRET = "your_secret_key";
 
 const register = async (req, res) => {
 
@@ -50,7 +49,7 @@ const login = async (req, res) => {
 
     const token = jwt.sign(
         { id: user.id, email: user.email },
-        JWT_SECRET,
+        process.env.JWT_SECRET,
         { expiresIn: "1h" }
     )
 

@@ -1,6 +1,4 @@
-const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken")
-const JWT_SECRET = "your_secret_key";
 
 const authMiddleware = (req, res, next) => {
     const authHeader = req.headers.authorization;
@@ -13,7 +11,7 @@ const authMiddleware = (req, res, next) => {
 
 
     try {
-        const decode = jwt.verify(token, JWT_SECRET);
+        const decode = jwt.verify(token, process.env.JWT_SECRET);
         req.user = decode;
         next()
     }

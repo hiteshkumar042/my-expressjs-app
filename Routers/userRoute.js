@@ -1,5 +1,4 @@
 const express = require("express");
-// let users = require("../data/users")
 
 const { getAllUser, getUserById, adduser, deleteuser } = require("../controllers/userController")
 
