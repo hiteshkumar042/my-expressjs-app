@@ -58,7 +58,6 @@ const login = async (req, res) => {
         email: user.email,
         token
     })
-
 }
 
 module.exports = { register, login }
