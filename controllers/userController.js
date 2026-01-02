@@ -4,10 +4,8 @@ const getAllUser = (req, res) => {
     res.json({ users })
 }
 
-
 const getUserById = (req, res) => {
     const id = Number(req.params.id);
-
     const user = users.find(u => u.id === id);
 
     if (!user) {
@@ -28,11 +26,8 @@ const adduser = (req, res) => {
     res.json({ msg: "user Created" })
 }
 
-
-
 const deleteuser = (req, res) => {
     users = users.filter(user => user.id, req.body.id)
-
     res.json({ msg: "User Deteled" })
 }
 
